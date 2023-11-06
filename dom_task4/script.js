@@ -1,16 +1,13 @@
-const html = document.documentElement;
-const body = document.createElement('body');
+// реалізувати вивід даних із полів при кліку на кнопку "Надіслати" в поле outBlock
 
-const bodyStr = `
-<body>
-  <main class="mainClass check item">         
-     <div id="myDiv">
-         <p>First paragraph</p>           
-     </div>
- </main> 
-</body>
-`;
+const btn = document.querySelector('.btn');
+const out = document.querySelector('.out');
+const arr = document.querySelectorAll('.arr');
 
+btn.addEventListener('click', function () {
+  out.innerHTML = '';
+  arr.forEach(function (item) {
+    out.innerHTML += '<br>' + item.value;
+  });
+});
 
-body.innerHTML = bodyStr;
-html.appendChild(body);
